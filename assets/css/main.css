@@ -280,11 +280,6 @@
 	canvas {
 		cursor: auto;
 	}
-
-	.gallery {
-		background-color: white;
-		color: black;
-	}
 	.logo {
 		position: absolute;
 		margin-left: auto;
@@ -295,12 +290,17 @@
   	transform: translateY(-50%);
 	}
 
+	.gallery {
+		background-color: white;
+		color: black;
+	}
 	.navbar {
 		font-family: komodoFont;
 		font-size: 50px;
 	}
 
 	.thumb_logo {
+  	padding-left: 20px;
 		display: inline-block;
 		width: 10%;
 	}
@@ -308,9 +308,3 @@
 	.navbar_title {
 		padding-left: 20px;
 	}
-
-	.galley_image img {
-		max-width: 100%;
-    max-height: 100%;
-	}
-
