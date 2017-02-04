@@ -302,9 +302,34 @@
 	.thumb_logo {
   	padding-left: 20px;
 		display: inline-block;
-		width: 10%;
+		width: 11.5%;
 	}
 
 	.navbar_title {
 		padding-left: 20px;
 	}
+	/*blur effect*/
+
+
+.blur{
+	-webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+	transition: all 500ms ease;
+	filter: blur(5px); /* Someday, sigh ... */ 
+	-webkit-filter: blur(5px); /* Prefixed CSS3 blur filters */
+	-moz-filter: blur(5px); 
+	-o-filter: blur(5px); 
+	-ms-filter: blur(5px); 
+	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5'); /* IE lte 9 */	
+}
+
+.blur:hover {
+	-webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+	transition: all 500ms ease;
+	filter: blur(0px)
+}
