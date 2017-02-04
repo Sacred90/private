@@ -1225,8 +1225,12 @@
 
 		.logo {
 			position: absolute;
-			left: 30%;
-			top: 30%;
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			right: 0;
+			top: 50%;
+    	transform: translateY(-50%);
 		}
 
 			#header .logo .icon:before {
