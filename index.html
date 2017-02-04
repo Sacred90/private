@@ -35,11 +35,9 @@
 
 		</style>
 
-			<!-- Wrapper -->
-		<a href="http://threejs.org" target="_blank"></a> - <span id="birds"></span> webgl gpgpu birds<br/>
-
-		<img class = "logo" src="images/LOGO_MWO.svg" alt="" />
-
+		<div class = "logo">
+			<img src="images/LOGO_MWO.svg" alt="" />
+		</div>
 		<script src="assets/build/three.js"></script>
 		<script src="assets/js/Detector.js"></script>
 		<script src="assets/js/libs/stats.min.js"></script>
@@ -416,8 +414,6 @@
 
 			var BOUNDS = 800, BOUNDS_HALF = BOUNDS / 2;
 
-			document.getElementById('birds').innerText = BIRDS;
-
 			function change(n) {
 				location.hash = n;
 				location.reload();
@@ -694,8 +690,6 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
 	</body>
