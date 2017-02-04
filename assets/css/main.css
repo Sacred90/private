@@ -312,24 +312,24 @@
 
 
 .blur{
-	-webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-	transition: all 500ms ease;
-	filter: blur(10px); /* Someday, sigh ... */ 
-	-webkit-filter: blur(10px); /* Prefixed CSS3 blur filters */
-	-moz-filter: blur(10px); 
-	-o-filter: blur(10px); 
-	-ms-filter: blur(10px); 
-	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='10'); /* IE lte 9 */	
+	-webkit-transition: all 800ms ease;
+  -moz-transition: all 800ms ease;
+  -ms-transition: all 800ms ease;
+  -o-transition: all 800ms ease;
+	transition: all 800ms ease;
+	filter: blur(20px); /* Someday, sigh ... */ 
+	-webkit-filter: blur(20px); /* Prefixed CSS3 blur filters */
+	-moz-filter: blur(20px); 
+	-o-filter: blur(20px); 
+	-ms-filter: blur(20px); 
+	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='20'); /* IE lte 9 */	
 }
 
 .blur:hover {
-	-webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-	transition: all 500ms ease;
+	-webkit-transition: all 800ms ease;
+  -moz-transition: all 800ms ease;
+  -ms-transition: all 800ms ease;
+  -o-transition: all 800ms ease;
+	transition: all 800ms ease;
 	filter: blur(0px)
 }
