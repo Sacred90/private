@@ -291,11 +291,11 @@
 
 	.about {
 		font-family: komodaFont;
-		position: absolute;
-		top:20px;
-		right:40px;
 		color: black;
-		font-size: 40px;
+		font-size: 50px;
+		cursor: pointer;
+		float: right;
+		padding-right: 65px;
 	}
 
 	.content {
@@ -305,6 +305,10 @@
 	.navbar {
 		font-family: komodaFont;
 		font-size: 50px;
+	}
+	
+	.navbar_logo {
+		cursor: pointer;
 	}
 
 	.thumb_logo {
@@ -325,6 +329,7 @@
     font-size:0; /* Remember to change it back to normal font size if have captions */
     list-style:none;
     background-color:#000;
+    clear: both;
 }
 #rig li {
     display: inline-block;
@@ -484,6 +489,9 @@
     transform: translateX(-50%) translateY(-50%);
 }
 .about_text h1 {
+	text-transform: none ;
+	font-weight: 500;
+	font-size: 45px;
 	color: black;
 	font-family: komodaFont;
 }
