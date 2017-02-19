@@ -8,6 +8,13 @@ $(document).ready(function(){
 			window.location.href = 'assets/html/gallery.html';
 		}, 2000);
 	})
+
+	$(".go_to_gallery_from_contact").click(function() {
+		$("body").addClass("overlay");
+		setTimeout(function(){
+			window.location.href = '../html/gallery.html';
+		}, 2000);
+	})
 	
 	$(".go_to_contact").click(function() {
 		$("body").addClass("overlay");
