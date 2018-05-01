@@ -6,45 +6,19 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel ="stylesheet" href ="assets/css/start-page.css">
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body>
-		<style>
-			body {
-				background-color: #ffffff;
-				margin: 0px;
-				overflow: hidden;
-				font-family:Monospace;
-				font-size:13px;
-				text-align:center;
-				text-align:center;
-				cursor: pointer;
-			}
 
-			a {
-				color:#0078ff;
-			}
-
-			#info {
-				color: #000;
-				position: absolute;
-				top: 10px;
-				width: 100%;
-			}
-
-		</style>
-
-		<a class = "logo go_to_gallery">
+		<a class = "logo" id ="go_to_gallery">
 			<img class ="blur" src="images/LOGO_MWO.svg" alt="" />
 		</a>
 
-		<script src="assets/build/three.min.js"></script>
-		<script src="assets/js/Detector.js"></script>
-		<script src="assets/js/libs/stats.min.js"></script>
-		<script src="assets/js/libs/dat.gui.min.js"></script>
+		<script src="assets/js/libs/three.min.js"></script>
 
-		<script src="assets/js/GPUComputationRenderer.js"></script>
+		<script src="assets/js/libs/GPUComputationRenderer.js"></script>
 
 		<!-- shader for bird's position -->
 		<script id="fragmentShaderPosition" type="x-shader/x-fragment">
@@ -312,8 +286,6 @@
 
 		<script>
 
-			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-
 			var hash = document.location.hash.substr( 1 );
 			if (hash) hash = parseInt(hash, 0);
 
@@ -454,9 +426,6 @@
 
 				initComputeRenderer();
 
-				stats = new Stats();
-				container.appendChild( stats.dom );
-
 				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
 				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
@@ -464,11 +433,6 @@
 				//
 
 				window.addEventListener( 'resize', onWindowResize, false );
-
-
-
-				var gui = new dat.GUI();
-
 
 				var effectController = {
 					seperation: 20.0,
@@ -487,20 +451,13 @@
 				};
 
 				valuesChanger();
-
-
-				gui.add( effectController, "seperation", 0.0, 100.0, 1.0 ).onChange( valuesChanger );
-				gui.add( effectController, "alignment", 0.0, 100, 0.001 ).onChange( valuesChanger );
-				gui.add( effectController, "cohesion", 0.0, 100, 0.025 ).onChange( valuesChanger );
-				gui.close();
-
 				initBirds();
 
 			}
 
 			function initComputeRenderer() {
 
-    				gpuCompute = new GPUComputationRenderer( WIDTH, WIDTH, renderer );
+    		gpuCompute = new GPUComputationRenderer( WIDTH, WIDTH, renderer );
 
 				var dtPosition = gpuCompute.createTexture();
 				var dtVelocity = gpuCompute.createTexture();
@@ -654,7 +611,6 @@
 				requestAnimationFrame( animate );
 
 				render();
-				stats.update();
 
 			}
 
@@ -689,9 +645,8 @@
 
 		</script>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/main.js"></script>
+		<!-- Scripts -->
+		<script src="assets/js/start-page.js"></script>
 
 	</body>
 </html>

@@ -4,6 +4,7 @@
     src: url(../fonts/Komoda.otf);
 }
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -309,7 +310,7 @@
 		font-family: komodaFont;
 		font-size: 50px;
 	}
-	
+
 	.navbar_logo {
 		cursor: pointer;
 	}
@@ -345,7 +346,7 @@
     margin:0;
     padding:2px;
 }
-        
+
 /* The wrapper for each item */
 .rig-cell {
     /*margin:12px;
@@ -354,7 +355,7 @@
     position: relative;
     overflow:hidden;
 }
-        
+
 /* If have the image layer */
 .rig-img {
     display:block;
@@ -368,7 +369,7 @@
 #rig li:hover .rig-img {
     transform:scale(1.05);
 }
-        
+
 /* If have the overlay layer */
 .rig-overlay {
     position: absolute;
@@ -440,12 +441,12 @@
   -ms-transition: all 800ms ease;
   -o-transition: all 800ms ease;
 	transition: all 800ms ease;
-	filter: blur(15px); /* Someday, sigh ... */ 
+	filter: blur(15px); /* Someday, sigh ... */
 	-webkit-filter: blur(15px); /* Prefixed CSS3 blur filters */
-	-moz-filter: blur(15px); 
-	-o-filter: blur(15px); 
-	-ms-filter: blur(15px); 
-	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='15'); /* IE lte 9 */	
+	-moz-filter: blur(15px);
+	-o-filter: blur(15px);
+	-ms-filter: blur(15px);
+	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='15'); /* IE lte 9 */
 }
 
 .blur:hover {
