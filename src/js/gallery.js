@@ -22,10 +22,10 @@ window.onload = () => {
 	}
 
 	function goToLocation(location) {
-		body.classList.add("overlay");
+		body.classList.add("overlayFast");
 
 		setTimeout(function(){
 			window.location.href = location;
-		}, 2000);
+		}, 1000);
 	}
 }

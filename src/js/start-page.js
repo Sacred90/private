@@ -4,7 +4,7 @@ window.onload = () => {
 
 	try {
 		goToGallery.addEventListener('click', () => {
-			goToLocation('assets/html/gallery.html')
+			goToLocation('src/html/gallery.html')
 		});
 	}
 	catch(err) {

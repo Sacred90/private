@@ -5,20 +5,17 @@
 		<title>MWO</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel ="stylesheet" href ="assets/css/start-page.css">
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="src/css/main.css" />
+		<link rel ="stylesheet" href ="src/css/start-page.css">
+		<!--[if lte IE 9]><link rel="stylesheet" href="src/css/ie9.css" /><![endif]-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+		<noscript><link rel="stylesheet" href="src/css/noscript.css" /></noscript>
 	</head>
 	<body>
 
 		<a class = "logo" id ="go_to_gallery">
-			<img class ="blur" src="images/LOGO_MWO.svg" alt="" />
+			<img class ="blur" src="../images/LOGO_MWO.svg" alt="" />
 		</a>
-
-		<script src="assets/js/libs/three.min.js"></script>
-
-		<script src="assets/js/libs/GPUComputationRenderer.js"></script>
 
 		<!-- shader for bird's position -->
 		<script id="fragmentShaderPosition" type="x-shader/x-fragment">
@@ -644,9 +641,5 @@
 			}
 
 		</script>
-
-		<!-- Scripts -->
-		<script src="assets/js/start-page.js"></script>
-
 	</body>
 </html>

@@ -484,6 +484,13 @@
   transition: visibility 2s, opacity 2s linear;
 }
 
+.overlayFast {
+  z-index:1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s linear;
+}
+
 @-webkit-keyframes blur {
   0%, 100%  { -webkit-filter: blur(0px); }
   50% { -webkit-filter: blur(3px); }

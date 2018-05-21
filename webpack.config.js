@@ -1,27 +1,80 @@
-// const HtmlWebpackPlugin = require('html-webpack-plugin'); // Require  html-webpack-plugin plugin
-
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
-  entry:"./assets/js/main.js", // webpack entry point. Module to start building dependency graph
+  entry: {
+    start: './src/js/start-page.js',
+    gallery: './src/js/gallery.js',
+    about: './src/js/about.js',
+    GPUComputationRenderer: './src/js/libs/GPUComputationRenderer.js',
+  },
   output: {
-    path: __dirname + '/dist', // Folder to store generated bundle
-    filename: 'bundle.js',  // Name of generated bundle after build
-    publicPath: '/' // public URL of the output directory when referenced in a browser
-  },
-  module: {  // where we defined file patterns and their loaders
-      rules: [
-        {
-            test: /\.js$/,
-            loader: "babel-loader",
-            exclude: [
-              /node_modules/
-            ]
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js'
+   },
+  devtool: 'source-map',
+  module: {
+    rules:
+    [{
+     test: /\.js$/,
+     exclude: /node_modules/,
+     use: 'babel-loader'
+    }, {
+      test: /\.(html)$/,
+      use: {
+        loader: 'html-loader',
+      }
+    }, {
+      test: /\.(png|jp(e*)g|svg)$/,
+      use: [{
+          loader: 'url-loader',
+          options: {
+              limit: 10000, // Convert images < 10kb to base64 strings
+              name: 'images/[hash]-[name].[ext]',
+              fallback: 'file-loader'
           }
-      ]
-  },
-  devServer: {  // configuration for webpack-dev-server
-      contentBase: './src/public',  //source of static assets
-      port: 7700, // port to run dev-server
-  },
+      }],
+    }, {
+    test: /\.(scss)$/,
+    use: [{
+      loader: 'style-loader',
+    }, {
+      loader: 'css-loader',
+    }, {
+      loader: 'postcss-loader',
+      options: {
+        plugins: function () {
+          return [
+            require('precss'),
+            require('autoprefixer')
+          ];
+        }
+      }
+    }, {
+      loader: 'sass-loader'
+    }]
+  },]
+ },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Start page',
+      inject: 'head',
+      template: './src/html/index.html',
+      chunks: ['app','start', 'GPUComputationRenderer'],
+      filename: './dist/index.html' //relative to root of the application
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Gallery page',
+      template: './src/html/gallery.html',
+      chunks: ['gallery'],
+      filename: './dist/gallery.html' //relative to root of the application
+    }),
+    new HtmlWebpackPlugin({
+      title: 'About page',
+      template: './src/html/about.html',
+      chunks: ['about'],
+      filename: './dist/about.html' //relative to root of the application
+  }),
+  ]
 };
