@@ -19,3 +19,45 @@ a {
 	top: 10px;
 	width: 100%;
 }
+
+.blur {
+	-webkit-transition: all 800ms ease;
+  -moz-transition: all 800ms ease;
+  -ms-transition: all 800ms ease;
+  -o-transition: all 800ms ease;
+	transition: all 800ms ease;
+	filter: blur(15px); /* Someday, sigh ... */
+	-webkit-filter: blur(15px); /* Prefixed CSS3 blur filters */
+	-moz-filter: blur(15px);
+	-o-filter: blur(15px);
+	-ms-filter: blur(15px);
+	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='15'); /* IE lte 9 */
+}
+
+.blur:hover {
+	-webkit-transition: all 800ms ease;
+  -moz-transition: all 800ms ease;
+  -ms-transition: all 800ms ease;
+  -o-transition: all 800ms ease;
+	transition: all 800ms ease;
+	filter: blur(0px)
+}
+
+.small_blur{
+  -webkit-animation: blur 3s infinite;
+}
+
+.small_blur:hover {
+	-webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+	transition: all 300ms ease;
+  -webkit-animation: all 300ms ease;
+  -moz-animation: all 300ms ease;
+  -ms-animation: all 300ms ease;
+  -o-animation: all 300ms ease;
+	animation: all 300ms ease;
+	filter: blur(0px);
+	/*-webkit-animation: blur 0s infinite;*/
+}

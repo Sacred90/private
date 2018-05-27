@@ -1,4 +1,5 @@
 import '../css/main.css';
+import '../css/gallery.css';
 
 window.onload = () => {
 	var goToAbout = document.getElementById('go_to_about');

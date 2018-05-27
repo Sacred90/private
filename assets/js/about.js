@@ -1,4 +1,6 @@
 import '../css/main.css';
+import '../css/about.css';
+
 
 window.onload = () => {
 	var goToGalleryFromContact = document.getElementById('go_to_gallery_from_contact');
