@@ -1,3 +1,5 @@
+import '../css/main.css';
+
 window.onload = () => {
 	var goToGalleryFromContact = document.getElementById('go_to_gallery_from_contact');
 	var goToMain = document.getElementById('go_to_main');
@@ -5,7 +7,7 @@ window.onload = () => {
 
 	try {
 		goToGalleryFromContact.addEventListener('click', () => {
-			goToLocation('../html/gallery.html');
+			goToLocation('./gallery.html');
 		});
 	}
 	catch(err) {
@@ -14,7 +16,7 @@ window.onload = () => {
 
 	try {
 		goToMain.addEventListener('click', () => {
-			goToLocation('../../index.html')
+			goToLocation('./index.html')
 		});
 	}
 	catch(err) {

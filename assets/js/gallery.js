@@ -1,3 +1,5 @@
+import '../css/main.css';
+
 window.onload = () => {
 	var goToAbout = document.getElementById('go_to_about');
 	var goToMain = document.getElementById('go_to_main');
@@ -14,7 +16,7 @@ window.onload = () => {
 
 	try {
 		goToMain.addEventListener('click', () => {
-			goToLocation('../../index.html')
+			goToLocation('./index.html')
 		});
 	}
 	catch(err) {

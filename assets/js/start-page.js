@@ -1,10 +1,13 @@
+import '../css/start-page.css';
+import '../css/main.css';
+
 window.onload = () => {
 	var goToGallery = document.getElementById('go_to_gallery');
 	var body = document.getElementsByTagName("BODY")[0];
 
 	try {
 		goToGallery.addEventListener('click', () => {
-			goToLocation('assets/html/gallery.html')
+			goToLocation('./gallery.html')
 		});
 	}
 	catch(err) {
