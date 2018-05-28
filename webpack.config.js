@@ -1,5 +1,6 @@
 const path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -68,6 +69,7 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-map',
   devServer: {
     // configuration for webpack-dev-server
     contentBase: "dist", //source of static assets
@@ -91,6 +93,10 @@ module.exports = {
       title: "about",
       filename: "./about.html",
       template: "./assets/html/about.html"
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
     })
   ]
 };
