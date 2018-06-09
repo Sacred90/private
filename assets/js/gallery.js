@@ -1,8 +1,5 @@
 import "../css/main.css";
 import "../css/gallery.css";
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 
 //images
 import * as bear from '../images/bear.svg';
@@ -25,33 +22,35 @@ import * as sowa from '../images/sowa.svg';
 import * as szczur from '../images/szczur.svg';
 import * as szczury from '../images/szczury.svg';
 
+let slideIndex = 1;
 
 window.onload = () => {
-  var goToAbout = document.getElementById("go_to_about");
-  var goToMain = document.getElementById("go_to_main");
-  var body = document.getElementsByTagName("BODY")[0];
-  var listOfImages = document.getElementById('rig');
+  const goToAbout = document.getElementById("go_to_about");
+  const goToMain = document.getElementById("go_to_main");
+  const body = document.getElementsByTagName("BODY")[0];
+  const listOfImages = document.getElementById('rig');
+  const modalBody = document.getElementsByClassName('modal-content')[0];
 
   const images = [
-    bear,
-    bear2,
-    blindWoman,
+    sowa,
+    robaczek,
     grzybek,
-    kogut,
     lis,
-    man,
-    man2,
+    bear,
+    blindWoman,
+    kogut,
     pelikan,
     rabitWoman,
-    rhino,
-    rhino1,
+    man,
+    man2,
+    szczur,
     rhino2,
     rhino3,
     rhino4,
-    robaczek,
-    sowa,
-    szczur,
+    rhino1,
     szczury,
+    bear2,
+    rhino
   ]
 
   images.forEach(image => {
@@ -59,32 +58,34 @@ window.onload = () => {
   })
 
   function innerImg (image) {
-    const idOfImages = image.default.substring(image.default.indexOf('/') + 1, image.default.indexOf('-'));
 
     listOfImages.innerHTML = listOfImages.innerHTML +
       `<li>
         <a class="rig-cell">
           <img class="rig-img" src="../${image.default}">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Proin Scelerisque</span>
+          <span class="rig-text"></span>
         </a>
       </li>`
+
+    modalBody.innerHTML = modalBody.innerHTML +
+      `<div class="mySlides">
+        <img class = "modalImage" src="../${image.default}"">
+      </div>`
   }
 
-
+  // ------------------- ALL EVENT HANDLERS -------------------------------
   // add events handler for clik, each of images
-  for(let elem of document.getElementsByClassName('rig-cell')) {
-    elem.addEventListener("click", () =>{
+  document.querySelectorAll('.rig-cell').forEach((element, index) => {
+    element.addEventListener("click", () =>{
       openModal();
-      currentSlide(1)
+      currentSlide(index + 1);
     });
-  }
+  });
 
   document.getElementsByClassName('close cursor')[0].addEventListener("click", () => {
     closeModal();
   });
-
-
 
 
   try {
@@ -110,11 +111,32 @@ window.onload = () => {
       window.location.href = location;
     }, 2000);
   }
+// ------------------------------------------------------------------
+  showSlides(slideIndex);
 };
+
 
 // Open the Modal
 function openModal() {
-  document.getElementById("myModal").style.display = "block";
+  document.getElementById("myModal").style.display = "flex";
+
+    const previousArrow = document.getElementsByClassName('prev')[0];
+    const nextArrow = document.getElementsByClassName('next')[0];
+    try {
+      previousArrow.addEventListener("click", () => {
+        plusSlides(-1);
+      });
+    } catch (err) {
+      console.error(err);
+    }
+
+      try {
+        nextArrow.addEventListener("click", () => {
+          plusSlides(1);
+        });
+      } catch (err) {
+        console.error(err);
+      }
 }
 
 // Close the Modal
@@ -122,11 +144,9 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
-
 // Next/previous controls
 function plusSlides(n) {
+  console.log("plus slides");
   showSlides((slideIndex += n));
 }
 
@@ -138,7 +158,6 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption");
   if (n > slides.length) {
     slideIndex = 1;
@@ -149,10 +168,5 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  captionText.innerHTML = dots[slideIndex - 1].alt;
+  slides[slideIndex - 1].style.display = "flex";
 }

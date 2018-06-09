@@ -5,8 +5,29 @@
 		<title>MWO</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 	</head>
 	<body>
+
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyDpHJjoBo4YU5L3pP4T01xdcdU9OM-MZpQ",
+				authDomain: "marzenia-w-obrazie.firebaseapp.com",
+				databaseURL: "https://marzenia-w-obrazie.firebaseio.com",
+				projectId: "marzenia-w-obrazie",
+				storageBucket: "",
+				messagingSenderId: "536728187838"
+			};
+			firebase.initializeApp(config);
+		</script>
 
 		<a class = "logo" id ="go_to_gallery">
 			<img class ="blur" src="../images/LOGO_MWO.svg" alt="logo" />
