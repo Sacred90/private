@@ -120,33 +120,36 @@ window.onload = () => {
 function openModal() {
   document.getElementById("myModal").style.display = "flex";
 
-    const previousArrow = document.getElementsByClassName('prev')[0];
-    const nextArrow = document.getElementsByClassName('next')[0];
+  const previousArrow = document.getElementsByClassName('prev')[0];
+  const nextArrow = document.getElementsByClassName('next')[0];
+  try {
+    previousArrow.addEventListener("click", () => {
+      plusSlides(-1);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+
     try {
-      previousArrow.addEventListener("click", () => {
-        plusSlides(-1);
+      nextArrow.addEventListener("click", () => {
+        plusSlides(1);
       });
     } catch (err) {
       console.error(err);
     }
 
-      try {
-        nextArrow.addEventListener("click", () => {
-          plusSlides(1);
-        });
-      } catch (err) {
-        console.error(err);
-      }
+    document.addEventListener('keydown', handleArrowsKey);
 }
 
 // Close the Modal
 function closeModal() {
-  document.getElementById("myModal").style.display = "none";
+  document.getElementById('myModal').style.display = "none";
+
+  document.removeEventListener('keydown', handleArrowsKey);
 }
 
 // Next/previous controls
 function plusSlides(n) {
-  console.log("plus slides");
   showSlides((slideIndex += n));
 }
 
@@ -169,4 +172,18 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   slides[slideIndex - 1].style.display = "flex";
+}
+
+function handleArrowsKey(event) {
+  if (event.keyCode == 37) {
+    plusSlides(-1);
+  }
+
+  if (event.keyCode == 39) {
+    plusSlides(1);
+  }
+
+  if (event.keyCode == 27) {
+    closeModal();
+  }
 }
