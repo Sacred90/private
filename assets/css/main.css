@@ -1,5 +1,6 @@
 @font-face {
-    font-family: komodaFont;
+		font-family: komodaFont;
+		font-display: swap;
     src: url(../fonts/Komoda.otf);
 }
 /* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600"); */
